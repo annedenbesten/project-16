@@ -8,6 +8,8 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5705215/
 To control this the personal-identification-pipeline, a pipeline was build, using minION sequenced HeLa CaSki cell lines as data.
 The flow chart of all programs and steps of this pipeline is depicted below.
 
+![](flowchart_end_report.png)
+
 
 
 
