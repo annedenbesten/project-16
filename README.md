@@ -11,9 +11,17 @@ The flow chart of all programs and steps of this pipeline is depicted below.
 ![](flowchart_end_report.png)
 
 Quality assessing 
-Quality assessment of the raw minION reads was performed by minIONQC. This tool uses the tool obtained during minION sequencing and resulting in an output of quality. Full documentation on the minIONQC tool can be found using the link below:
+Quality assessment of the raw minION reads was performed by minIONQC. This tool uses the tool obtained during minION sequencing and resulting in an output of quality. 
+
+Full documentation on the minIONQC tool can be found using the link below:
 
 https://github.com/roblanf/minion_qc
+
+Reads were trimmed using NanoFilt. Reads were filtered based on a quality of 9, which is also implemented in the personal-identification pipeline. After installing, the tool works with a simple command: NanoFilt -q 9 reads.fastq > trimmed.fastq  
+
+Full documentation on NanoFilt is given in the link below:
+
+https://github.com/wdecoster/nanofilt
 
 
 
