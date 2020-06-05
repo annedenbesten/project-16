@@ -21,7 +21,7 @@ The flow chart of all programs and steps of this pipeline is depicted below.
 
 ![](flowchart_end_report.png)
 
-## Nanofilt
+## minIONQC
 Quality assessment of the raw minION reads was performed by minIONQC.Full documentation on the minIONQC tool can be found using the link below:
 > https://github.com/roblanf/minion_qc
 Uses a summary.txt of the minION sequencing as input in this case > MT-110490_20191217_144542_FAL19003_minion_sequencing_run_20191217_helacaski-LL_bc01-02_sequencing_summary.txt
