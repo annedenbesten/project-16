@@ -1,5 +1,11 @@
 # project-16
 ## Table of contents
+-requirements
+
+## requirements
+-Linux
+-Python 3.7
+-Java
 
 
 
