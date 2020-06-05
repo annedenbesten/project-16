@@ -1,7 +1,8 @@
 # project-16
 Quality control on the personal-identification-pipeline created by Zaaijer et al. using minION sequenced HeLa CaSki cell lines.
 ## Table of contents
--requirements
+- Requirements
+- Brief description
 
 ## Requirements
 * Linux 
