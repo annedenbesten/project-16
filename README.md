@@ -3,9 +3,7 @@
 -requirements
 
 ## requirements
-*Linux
-*Python 3.7
-*Java
+*Linux *Python 3.7 *Java
 
 
 
