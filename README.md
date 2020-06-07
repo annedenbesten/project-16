@@ -35,20 +35,12 @@ Full documentation on NanoFilt is given in the link below:
 
 Reads were filtered in lisa using the batch script `nanofilt.sh`
 
+## Canu
 Assembly was attempted by Canu, a de novo assembler. Full documentation on Canu can be found on both github and official documentation, both are stated below. The tool is used on the grid of lisa.
 
-https://canu.readthedocs.io/en/latest/
-https://github.com/marbl/canu
+> https://canu.readthedocs.io/en/latest/
+> https://github.com/marbl/canu
 
 Assembly with canu can be attempted through multiple paths, by conda, pre2019 biorunner and the binary release, which is advised to use. Using conda for running canu enables the use of the latest version of the tool. For this instance, version 2.0. While running Canu using the HeLa CaSki minION reads, data provided by canu was also used to detect possible errors. E.coli sequenced by minION was used as data, along with the command stated in the Canu tutorial. The scripts and slurms show a mhap precompute job failed. According to Canu documentation this error is due to conda installation errors. As Canu runs on lisa, a Canu version provided by the server through pre2019 biorunner. Due to the Canu of pre2019 biorunner, it is not able to run Canu on the grid, as can be seen in the slurms of the scripts. 
 
 Ultimately, the genome was assembled by Canu present on galaxy.eu. The trimmed reads were indicated as raw nanopore data, this was the only changed setting.
-
-Quality of assembly was assessed using quast
-
-
-
-
-
-
-
