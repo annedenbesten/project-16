@@ -8,6 +8,7 @@ Quality control on the personal-identification-pipeline created by Zaaijer et al
 * Linux 
 * Python 3.7 
 * Java
+* Canu binary release
 
 ## Brief description
 Quality control on the personal-identification-pipeline created by Zaaijer et al. using minION sequenced HeLa CaSki cell lines.
