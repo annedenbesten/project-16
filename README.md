@@ -20,7 +20,7 @@ Zaaijer et al. build a pipeline personal-identification-pipeline to quickly dete
 To control this the personal-identification-pipeline, a pipeline was build, using minION sequenced HeLa CaSki cell lines as data.
 The flow chart of all programs and steps of this pipeline is depicted below.
 
-![](flowchart_github.png)
+![](flowchart_end_report.png)
 
 ## MinIONQC
 Quality assessment of the raw minION reads was performed by minIONQC.Full documentation on the minIONQC tool can be found using the link below:
