@@ -53,6 +53,13 @@ Using conda for running canu enables the use of the latest version of the tool. 
 As Canu runs on lisa, a Canu version provided by the server through pre2019 biorunner. This version of canu has been run both locally and on the grid. Scripts and slurms are provided in..
 
 Ultimately, the genome was assembled by Canu present on galaxy.eu. The following settings were used:
+Assembly with canu can be attempted through multiple paths, by conda, pre2019 biorunner and the binary release,the latter is advised to use by canu. Script using to run the 
+
+Using conda for running canu enables the use of the latest version of the tool. For this instance, version 2.0. While running Canu using the HeLa CaSki minION reads, data provided by canu was also used to detect possible errors. E.coli sequenced by minION was used as data, along with the command stated in the Canu tutorial. The scripts and slurms show a mhap precompute job failed.
+
+As Canu runs on lisa, a Canu version provided by the server through pre2019 biorunner. Due to the Canu of pre2019 biorunner, it is not able to run Canu on the grid, as can be seen in the slurms of the scripts. 
+
+Ultimately, the genome was assembled by Canu present on galaxy.eu. The following settings were used:
 ```
 Input files                                                                    Trimmed minION reads in fastQ format
 Mode                                                                           Nanopore-raw
@@ -65,4 +72,16 @@ Minimum overlap                                                                5
 Target coverage for corrected reads                                            40
 ```
 ## QUAST
-QUAST is 
+QUAST is a tool implementated for the assessment of quality of assembly. The tool provides several types of files, containing information about the quality of the assembled genome. Galaxy is used to run QUAST, having the following settings:
+```
+Input files                                                                    Canu_output_contigs.fasta.gz
+Type of assembly                                                               Genome
+Use a reference genome                                                         No
+Estimated reference genome size                                                3000000000
+Type of Organism                                                               Eukaryote
+Compute k-mer-based quality metrics                                            No
+Comma-separated list of contig length thresholds (in bp)                       0.1
+Lower threshold for the relocation size                                       1000
+Max allowed scaffold gap length difference                                    1000
+Lower threshold for detecting partially unaligned contigs                     1000
+```
