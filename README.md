@@ -44,4 +44,15 @@ Assembly was attempted by Canu, a de novo assembler. Full documentation on Canu 
 
 Assembly with canu can be attempted through multiple paths, by conda, pre2019 biorunner and the binary release, which is advised to use. Using conda for running canu enables the use of the latest version of the tool. For this instance, version 2.0. While running Canu using the HeLa CaSki minION reads, data provided by canu was also used to detect possible errors. E.coli sequenced by minION was used as data, along with the command stated in the Canu tutorial. The scripts and slurms show a mhap precompute job failed. According to Canu documentation this error is due to conda installation errors. As Canu runs on lisa, a Canu version provided by the server through pre2019 biorunner. Due to the Canu of pre2019 biorunner, it is not able to run Canu on the grid, as can be seen in the slurms of the scripts. 
 
-Ultimately, the genome was assembled by Canu present on galaxy.eu. The trimmed reads were indicated as raw nanopore data, this was the only changed setting.
+Ultimately, the genome was assembled by Canu present on galaxy.eu. The following settings were used:
+```
+Input files                                                                             Trimmed minION reads in fastQ format
+Mode                                                                                    Nanopore-raw
+To restrict canu to only a specific stage, use                                          All
+Estimated genome size                                                                   3000m
+Maximum raw overlap mismatch                                                            0.500
+Maximum corrected overlap mismatch                                                      0.144
+Minimum read length                                                                     1000
+Minimum overlap                                                                         500
+Target coverage for corrected reads                                                     40
+```
