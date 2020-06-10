@@ -92,12 +92,23 @@ How are sequences judged to be unique                                         Ac
 Accession Parsing Regex                                                       ^>([^ ]+).*$
 ```
 ## Minimap2
-Minimap2 align the the contigs with the trimmed reads, which serves as reference genome. Minimap2 is used for more accurate polishing with Racon. The tool on galaxy was implemented with the following setting:
+Minimap2 align the the contigs with the trimmed reads, which serves as reference genome. Minimap2 is used for more accurate polishing with Racon. The tool on galaxy was implemented using the merged trimmed reads as reference genome and single-end merged contigs as input.
+
+## BAM to SAM convertion
+As minimap2 created a BAM file as output and Racon requires bam, the file needs to be converted. Used was the tool samtools, using the minimap2 data as input. Further indicates was that the tool has to look into and report all the reads, and give a SAM file as output.
+
+## Racon
+Racon is a de novo assembly polisher, which corrects raw contigs. The following settings were used to run Racon:
 ```
-
-
-
-
-
-
-
+Sequences                                                                      Merged Canu Contigs
+Overlaps                                                                       Minimap2 output in SAM format
+Target sequences                                                               Trimmed reads
+Output unpolished target sequences                                             No
+Perform fragment correction instead of contig polishing                        No
+Size of window on which POA is performed                                       500
+Threshold for average base quality of windows used in poa                      10.0
+Maximum allowed error rate used for filtering overlaps                         0.3
+Score for matching bases                                                       5
+Score for mismatching bases                                                    -4
+Gap penalty                                                                    -8
+```
