@@ -1,4 +1,4 @@
-# Project-16
+# Pipeline cell line identification quality control
 Quality control on the personal-identification-pipeline created by Zaaijer et al. using minION sequenced HeLa CaSki cell lines.
 ## Table of contents
 - Requirements
@@ -7,12 +7,16 @@ Quality control on the personal-identification-pipeline created by Zaaijer et al
 - Nanofilt
 - Canu 
 - QUAST
+- Preparation minimap2
+- minimap2
+- SAM to BAM convertion
+- Racon
 
 ## Requirements
 * Linux 
 * Python 3.7 
 * Java
-* Canu binary release
+* galaxy.eu
 
 ## Brief description
 Quality control on the personal-identification-pipeline created by Zaaijer et al. using minION sequenced HeLa CaSki cell lines.
