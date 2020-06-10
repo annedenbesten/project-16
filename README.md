@@ -52,9 +52,9 @@ Assembly was attempted by Canu, a de novo assembler. Full documentation on Canu 
 
 Assembly with canu can be attempted through multiple paths, by conda, pre2019 biorunner and the binary release,the latter is advised to use by canu. Script used to run canu is
 
-Using conda for running canu enables the use of the latest version of the tool. For this instance, version 2.0. Both the data provided in the tutorial of conda, as wel as the trimmed HeLa CaSki cell line were used as input. The scripts and slurms are..
+Using conda for running canu enables the use of the latest version of the tool. For this instance, version 2.0. Both the data provided in the tutorial of conda, as wel as the trimmed HeLa CaSki cell line were used as input. The scripts and slurms are `canu_conda.sh` and `slurm_conda-6070974.out` for HeLa CaSki. For E.coli `canu_conda_Ecoli.out`.
 
-As Canu runs on lisa, a Canu version provided by the server through pre2019 biorunner. This version of canu has been run both locally and on the grid. Scripts and slurms are provided in..
+As Canu runs on lisa, a Canu version provided by the server through pre2019 biorunner. This version of canu has been run both locally and on the grid. Script and slurms are `canu_lisa.sh`, `slurm_biorunner-6104707.out` and  ``
 
 Ultimately, the genome was assembled by Canu present on galaxy.eu. The following settings were used:
 Assembly with canu can be attempted through multiple paths, by conda, pre2019 biorunner and the binary release,the latter is advised to use by canu. Script using to run the 
