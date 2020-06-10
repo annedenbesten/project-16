@@ -1,0 +1,6 @@
+enableOEA=true
+stopOnReadQuality=false
+maxThreads=16
+maxMemory=86g
+gridOptions= “–cpus-per-task=1"
+gridEngineThreadsOption="-l npcus=16"

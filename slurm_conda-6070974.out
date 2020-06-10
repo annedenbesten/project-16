@@ -1,0 +1,197 @@
+-- Canu 2.0
+--
+-- Detected Java(TM) Runtime Environment '1.8.0_152-release' (from '/home/atgm2001/miniconda3/bin/java') with -d64 support.
+-- Detected gnuplot version '5.2 patchlevel 7   ' (from 'gnuplot') and image format 'png'.
+-- Detected 16 CPUs and 93 gigabytes of memory.
+-- Detected Slurm with 'sinfo' binary in /usr/bin/sinfo.
+-- Detected Slurm with task IDs up to 1000 allowed.
+-- 
+-- Found  29 hosts with  24 cores and  186 GB memory under Slurm control.
+-- Found 282 hosts with  16 cores and   90 GB memory under Slurm control.
+-- Found  21 hosts with  12 cores and  250 GB memory under Slurm control.
+-- Found   1 host  with  48 cores and 2000 GB memory under Slurm control.
+--
+--                         (tag)Threads
+--                (tag)Memory         |
+--        (tag)             |         |  algorithm
+--        -------  ----------  --------  -----------------------------
+-- Grid:  meryl     12.000 GB    4 CPUs  (k-mer counting)
+-- Grid:  hap        8.000 GB    4 CPUs  (read-to-haplotype assignment)
+-- Grid:  cormhap    6.000 GB    4 CPUs  (overlap detection with mhap)
+-- Grid:  obtovl     4.000 GB    4 CPUs  (overlap detection)
+-- Grid:  utgovl     4.000 GB    4 CPUs  (overlap detection)
+-- Grid:  cor        8.000 GB    4 CPUs  (read correction)
+-- Grid:  ovb        4.000 GB    1 CPU   (overlap store bucketizer)
+-- Grid:  ovs        8.000 GB    1 CPU   (overlap store sorting)
+-- Grid:  red       16.000 GB    4 CPUs  (read error detection)
+-- Grid:  oea        8.000 GB    1 CPU   (overlap error adjustment)
+-- Grid:  bat       16.000 GB    4 CPUs  (contig construction with bogart)
+-- Grid:  cns        -.--- GB    4 CPUs  (consensus)
+-- Grid:  gfa       16.000 GB    4 CPUs  (GFA alignment and processing)
+--
+-- Found untrimmed raw Nanopore reads in the input files.
+--
+-- Generating assembly 'hela' in '/scratch/Assembly':
+--    - correct raw reads.
+--    - trim corrected reads.
+--    - assemble corrected and trimmed reads.
+--
+-- Parameters:
+--
+--  genomeSize        3500000
+--
+--  Overlap Generation Limits:
+--    corOvlErrorRate 0.3200 ( 32.00%)
+--    obtOvlErrorRate 0.1200 ( 12.00%)
+--    utgOvlErrorRate 0.1200 ( 12.00%)
+--
+--  Overlap Processing Limits:
+--    corErrorRate    0.5000 ( 50.00%)
+--    obtErrorRate    0.1200 ( 12.00%)
+--    utgErrorRate    0.1200 ( 12.00%)
+--    cnsErrorRate    0.2000 ( 20.00%)
+--
+--
+-- BEGIN CORRECTION
+--
+----------------------------------------
+-- Starting command on Mon Jun  8 00:15:38 2020 with 1724.785 GB free disk space
+
+    cd .
+    ./hela.seqStore.sh \
+    > ./hela.seqStore.err 2>&1
+
+-- Finished on Mon Jun  8 00:15:49 2020 (11 seconds) with 1724.472 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Mon Jun  8 00:15:50 2020 with 1724.472 GB free disk space
+
+    cd .
+    /home/atgm2001/miniconda3/bin/sqStoreDumpMetaData \
+      -S ./hela.seqStore \
+      -raw \
+      -histogram \
+      -lengths \
+    > ./hela.seqStore/readlengths-cor.dat \
+    2> ./hela.seqStore/readlengths-cor.err 
+    
+
+-- Finished on Mon Jun  8 00:15:50 2020 (lickety-split) with 1724.471 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Mon Jun  8 00:15:50 2020 with 1724.471 GB free disk space
+
+    cd .
+    /home/atgm2001/miniconda3/bin/sqStoreDumpMetaData \
+      -S ./hela.seqStore \
+      -raw \
+      -histogram \
+    > ./hela.seqStore/readlengths-cor.txt \
+    2> ./hela.seqStore/readlengths-cor.err 
+    
+
+-- Finished on Mon Jun  8 00:15:50 2020 (like a bat out of hell) with 1724.471 GB free disk space
+----------------------------------------
+--
+-- In sequence store './hela.seqStore':
+--   Found 93088 reads.
+--   Found 700001122 bases (200 times coverage).
+--    
+--    G=700001122                        sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010        36214      1494     70007086  ||       1000-2982        33330|---------------------------------------------------------------
+--    00020        26406      3781    140008005  ||       2983-4965        16714|--------------------------------
+--    00030        20503      6802    210003559  ||       4966-6948        10601|---------------------
+--    00040        16314     10645    280003136  ||       6949-8931         7438|---------------
+--    00050        12937     15475    350003694  ||       8932-10914        5357|-----------
+--    00060        10137     21587    420009567  ||      10915-12897        4097|--------
+--    00070         7633     29542    490008065  ||      12898-14880        3144|------
+--    00080         5375     40427    560005959  ||      14881-16863        2431|-----
+--    00090         3259     56973    630001114  ||      16864-18846        1894|----
+--    00100         1000     93087    700001122  ||      18847-20829        1477|---
+--    001.000x               93088    700001122  ||      20830-22812        1196|---
+--                                               ||      22813-24795         970|--
+--                                               ||      24796-26778         793|--
+--                                               ||      26779-28761         605|--
+--                                               ||      28762-30744         516|-
+--                                               ||      30745-32727         420|-
+--                                               ||      32728-34710         376|-
+--                                               ||      34711-36693         286|-
+--                                               ||      36694-38676         211|-
+--                                               ||      38677-40659         227|-
+--                                               ||      40660-42642         171|-
+--                                               ||      42643-44625         150|-
+--                                               ||      44626-46608         110|-
+--                                               ||      46609-48591          86|-
+--                                               ||      48592-50574          95|-
+--                                               ||      50575-52557          77|-
+--                                               ||      52558-54540          45|-
+--                                               ||      54541-56523          48|-
+--                                               ||      56524-58506          36|-
+--                                               ||      58507-60489          38|-
+--                                               ||      60490-62472          23|-
+--                                               ||      62473-64455          20|-
+--                                               ||      64456-66438          22|-
+--                                               ||      66439-68421          21|-
+--                                               ||      68422-70404          15|-
+--                                               ||      70405-72387          12|-
+--                                               ||      72388-74370           9|-
+--                                               ||      74371-76353           3|-
+--                                               ||      76354-78336           5|-
+--                                               ||      78337-80319           4|-
+--                                               ||      80320-82302           2|-
+--                                               ||      82303-84285           2|-
+--                                               ||      84286-86268           2|-
+--                                               ||      86269-88251           3|-
+--                                               ||      88252-90234           1|-
+--                                               ||      90235-92217           3|-
+--                                               ||      92218-94200           0|
+--                                               ||      94201-96183           1|-
+--                                               ||      96184-98166           0|
+--                                               ||      98167-100149          1|-
+--    
+-- New report created.
+----------------------------------------
+-- Starting command on Mon Jun  8 00:15:50 2020 with 1724.471 GB free disk space
+
+    cd correction/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Mon Jun  8 00:15:50 2020 (fast as lightning) with 1724.471 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  1.81 GB       1
+--        02  0.94 GB       1
+--        04  0.50 GB       1
+--        06  0.31 GB       1
+--
+--  For 93088 reads with 700001122 bases, limit to 7 batches.
+--  Will count kmers using 01 jobs, each using 3 GB and 4 threads.
+--
+-- Report changed.
+-- Finished stage 'merylConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+--
+-- 'meryl-count.jobSubmit-01.sh' -> job 6103813 task 1.
+--
+----------------------------------------
+-- Starting command on Mon Jun  8 00:15:51 2020 with 1724.471 GB free disk space
+
+    cd /scratch/Assembly
+    sbatch \
+      --depend=afterany:6103813 \
+      --cpus-per-task=1 \
+      --mem-per-cpu=4g   \
+      -D `pwd` \
+      -J 'canu_hela' \
+      -o canu-scripts/canu.01.out  canu-scripts/canu.01.sh
+Submitted batch job 6103814
+
+-- Finished on Mon Jun  8 00:15:51 2020 (like a bat out of hell) with 1724.471 GB free disk space
+----------------------------------------
+cp: cannot stat '/scratch/hela*': No such file or directory

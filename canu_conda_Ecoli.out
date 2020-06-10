@@ -1,0 +1,87 @@
+
+Found perl:
+   /home/atgm2001/miniconda3/bin/perl
+   This is perl 5, version 26, subversion 2 (v5.26.2) built for x86_64-linux-thread-multi
+
+Found java:
+   /home/atgm2001/miniconda3/bin/java
+   openjdk version "1.8.0_152-release"
+
+Found canu:
+   /home/atgm2001/miniconda3/bin/canu
+   Canu 2.0
+
+-- Canu 2.0
+--
+-- Detected Java(TM) Runtime Environment '1.8.0_152-release' (from '/home/atgm2001/miniconda3/bin/java') with -d64 support.
+-- Detected gnuplot version '5.2 patchlevel 7   ' (from 'gnuplot') and image format 'png'.
+-- Detected 16 CPUs and 93 gigabytes of memory.
+-- Detected Slurm with 'sinfo' binary in /usr/bin/sinfo.
+-- Detected Slurm with task IDs up to 1000 allowed.
+-- 
+-- Found  21 hosts with  12 cores and  250 GB memory under Slurm control.
+-- Found  29 hosts with  24 cores and  186 GB memory under Slurm control.
+-- Found   1 host  with  48 cores and 2000 GB memory under Slurm control.
+-- Found 282 hosts with  16 cores and   90 GB memory under Slurm control.
+--
+--                         (tag)Threads
+--                (tag)Memory         |
+--        (tag)             |         |  algorithm
+--        -------  ----------  --------  -----------------------------
+-- Grid:  meryl     12.000 GB    4 CPUs  (k-mer counting)
+-- Grid:  hap        8.000 GB    4 CPUs  (read-to-haplotype assignment)
+-- Grid:  cormhap    6.000 GB    4 CPUs  (overlap detection with mhap)
+-- Grid:  obtovl     4.000 GB    4 CPUs  (overlap detection)
+-- Grid:  utgovl     4.000 GB    4 CPUs  (overlap detection)
+-- Grid:  cor        8.000 GB    4 CPUs  (read correction)
+-- Grid:  ovb        4.000 GB    1 CPU   (overlap store bucketizer)
+-- Grid:  ovs        8.000 GB    1 CPU   (overlap store sorting)
+-- Grid:  red       16.000 GB    4 CPUs  (read error detection)
+-- Grid:  oea        8.000 GB    1 CPU   (overlap error adjustment)
+-- Grid:  bat       16.000 GB    4 CPUs  (contig construction with bogart)
+-- Grid:  cns        -.--- GB    4 CPUs  (consensus)
+-- Grid:  gfa       16.000 GB    4 CPUs  (GFA alignment and processing)
+--
+-- In 'ecoli.seqStore', found Nanopore reads:
+--   Nanopore:                 1
+--
+--   Raw:                      1
+--
+-- Generating assembly 'ecoli' in '/home/atgm2001/project/ecoli-oxford':
+--    - correct raw reads.
+--    - trim corrected reads.
+--    - assemble corrected and trimmed reads.
+--
+-- Parameters:
+--
+--  genomeSize        4800000
+--
+--  Overlap Generation Limits:
+--    corOvlErrorRate 0.3200 ( 32.00%)
+--    obtOvlErrorRate 0.1200 ( 12.00%)
+--    utgOvlErrorRate 0.1200 ( 12.00%)
+--
+--  Overlap Processing Limits:
+--    corErrorRate    0.5000 ( 50.00%)
+--    obtErrorRate    0.1200 ( 12.00%)
+--    utgErrorRate    0.1200 ( 12.00%)
+--    cnsErrorRate    0.2000 ( 20.00%)
+--
+--
+-- BEGIN CORRECTION
+--
+-- No change in report.
+--
+-- OVERLAPPER (mhap) (correction) complete, not rewriting scripts.
+--
+--
+-- Mhap precompute jobs failed, tried 2 times, giving up.
+--   job correction/1-overlapper/blocks/000001.dat FAILED.
+--   job correction/1-overlapper/blocks/000002.dat FAILED.
+--
+
+ABORT:
+ABORT: Canu 2.0
+ABORT: Don't panic, but a mostly harmless error occurred and Canu stopped.
+ABORT: Try restarting.  If that doesn't work, ask for help.
+ABORT:

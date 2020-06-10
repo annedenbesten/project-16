@@ -1,0 +1,195 @@
+------------------- /hpc/sw/modules/modulefiles/applications -------------------
+canu/1.5(default)  
+-- Canu release v1.5
+-- Detected Java(TM) Runtime Environment '1.8.0_152-release' (from '/home/atgm2001/miniconda3/bin/java').
+-- Detected gnuplot version '5.2 patchlevel 7' (from 'gnuplot') and image format 'svg'.
+-- Detected 16 CPUs and 93 gigabytes of memory.
+-- Limited to 86g gigabytes from maxMemory option.
+-- Limited to 16 CPUs from maxThreads option.
+-- Detected Slurm with 'sinfo' binary in /usr/bin/sinfo.
+-- Detected Slurm with 'MaxArraySize' limited to 1000 jobs.
+-- 
+-- Found   1 host  with  48 cores and 2001 GB memory under Slurm control.
+-- Found  29 hosts with  24 cores and  187 GB memory under Slurm control.
+-- Found 282 hosts with  16 cores and   91 GB memory under Slurm control.
+-- Found  21 hosts with  12 cores and  251 GB memory under Slurm control.
+--
+-- Run under grid control using    8 GB and   4 CPUs for stage 'meryl'.
+-- Run under grid control using    6 GB and   4 CPUs for stage 'mhap (cor)'.
+-- Run under grid control using    8 GB and   4 CPUs for stage 'overlapper (obt)'.
+-- Run under grid control using    8 GB and   4 CPUs for stage 'overlapper (utg)'.
+-- Run under grid control using   11 GB and   2 CPUs for stage 'falcon_sense'.
+-- Run under grid control using    4 GB and   1 CPU  for stage 'ovStore bucketizer'.
+-- Run under grid control using    8 GB and   1 CPU  for stage 'ovStore sorting'.
+-- Run under grid control using    2 GB and   4 CPUs for stage 'read error detection'.
+-- Run under grid control using    1 GB and   1 CPU  for stage 'overlap error adjustment'.
+-- Run under grid control using   16 GB and   4 CPUs for stage 'bogart'.
+-- Run under grid control using    4 GB and   1 CPU  for stage 'GFA alignment and processing'.
+-- Run under grid control using   22 GB and   4 CPUs for stage 'consensus'.
+--
+-- Generating assembly 'hela' in '/scratch/Assembly'
+--
+-- Parameters:
+--
+--  genomeSize        3500000
+--
+--  Overlap Generation Limits:
+--    corOvlErrorRate 0.3200 ( 32.00%)
+--    obtOvlErrorRate 0.1440 ( 14.40%)
+--    utgOvlErrorRate 0.1440 ( 14.40%)
+--
+--  Overlap Processing Limits:
+--    corErrorRate    0.5000 ( 50.00%)
+--    obtErrorRate    0.1440 ( 14.40%)
+--    utgErrorRate    0.1440 ( 14.40%)
+--    cnsErrorRate    0.1440 ( 14.40%)
+--
+--
+-- BEGIN CORRECTION
+--
+----------------------------------------
+-- Starting command on Mon Jun  8 16:09:08 2020 with 1724.771 GB free disk space
+
+    cd correction
+    /sara/sw/canu-1.5/Linux-amd64/bin/gatekeeperCreate \
+      -minlength 1000 \
+      -o ./hela.gkpStore.BUILDING \
+      ./hela.gkpStore.gkp \
+    > ./hela.gkpStore.BUILDING.err 2>&1
+
+-- Finished on Mon Jun  8 16:09:15 2020 (7 seconds) with 1724.471 GB free disk space
+----------------------------------------
+Gatekeeper detected problems in your input reads.  Please review the logging in files:
+  /scratch/Assembly/correction/hela.gkpStore.BUILDING.err
+  /scratch/Assembly/correction/hela.gkpStore.BUILDING/errorLog
+Proceeding with assembly because stopOnReadQuality=false.
+--
+-- In gatekeeper store 'correction/hela.gkpStore':
+--   Found 118108 reads.
+--   Found 887383995 bases (253.53 times coverage).
+--
+--   Read length histogram (one '*' equals 372.24 reads):
+--        0    999      0 
+--     1000   1999  26057 **********************************************************************
+--     2000   2999  16475 ********************************************
+--     3000   3999  11827 *******************************
+--     4000   4999   9299 ************************
+--     5000   5999   7510 ********************
+--     6000   6999   6058 ****************
+--     7000   7999   5155 *************
+--     8000   8999   4298 ***********
+--     9000   9999   3610 *********
+--    10000  10999   3243 ********
+--    11000  11999   2698 *******
+--    12000  12999   2465 ******
+--    13000  13999   2099 *****
+--    14000  14999   1863 *****
+--    15000  15999   1529 ****
+--    16000  16999   1476 ***
+--    17000  17999   1240 ***
+--    18000  18999   1111 **
+--    19000  19999   1020 **
+--    20000  20999    859 **
+--    21000  21999    808 **
+--    22000  22999    689 *
+--    23000  23999    644 *
+--    24000  24999    564 *
+--    25000  25999    516 *
+--    26000  26999    459 *
+--    27000  27999    367 
+--    28000  28999    394 *
+--    29000  29999    353 
+--    30000  30999    288 
+--    31000  31999    285 
+--    32000  32999    269 
+--    33000  33999    247 
+--    34000  34999    209 
+--    35000  35999    205 
+--    36000  36999    168 
+--    37000  37999    136 
+--    38000  38999    123 
+--    39000  39999    144 
+--    40000  40999    132 
+--    41000  41999    109 
+--    42000  42999     96 
+--    43000  43999     93 
+--    44000  44999     87 
+--    45000  45999     76 
+--    46000  46999     57 
+--    47000  47999     59 
+--    48000  48999     53 
+--    49000  49999     58 
+--    50000  50999     49 
+--    51000  51999     62 
+--    52000  52999     31 
+--    53000  53999     29 
+--    54000  54999     33 
+--    55000  55999     30 
+--    56000  56999     19 
+--    57000  57999     24 
+--    58000  58999     21 
+--    59000  59999     27 
+--    60000  60999     18 
+--    61000  61999     14 
+--    62000  62999     16 
+--    63000  63999     12 
+--    64000  64999     14 
+--    65000  65999      9 
+--    66000  66999     11 
+--    67000  67999     18 
+--    68000  68999      8 
+--    69000  69999     10 
+--    70000  70999      7 
+--    71000  71999     11 
+--    72000  72999      6 
+--    73000  73999      6 
+--    74000  74999      6 
+--    75000  75999      3 
+--    76000  76999      4 
+--    77000  77999      5 
+--    78000  78999      5 
+--    79000  79999      1 
+--    80000  80999      1 
+--    81000  81999      2 
+--    82000  82999      2 
+--    83000  83999      1 
+--    84000  84999      3 
+--    85000  85999      0 
+--    86000  86999      1 
+--    87000  87999      2 
+--    88000  88999      0 
+--    89000  89999      1 
+--    90000  90999      2 
+--    91000  91999      1 
+--    92000  92999      0 
+--    93000  93999      0 
+--    94000  94999      0 
+--    95000  95999      1 
+--    96000  96999      0 
+--    97000  97999      1 
+--    98000  98999      0 
+--    99000  99999      0 
+--   100000 100999      1 
+-- Finished stage 'cor-gatekeeper', reset canuIteration.
+-- Finished stage 'merylConfigure', reset canuIteration.
+--
+-- Running jobs.  First attempt out of 2.
+--
+./meryl.jobSubmit.sh: line 5: unexpected EOF while looking for matching `"'
+./meryl.jobSubmit.sh: line 9: syntax error: unexpected end of file
+Use of uninitialized value $error[0] in join or string at /home/atgm2001/miniconda3/lib/5.26.2/Carp.pm line 460.
+================================================================================
+Please panic.  Canu failed, and it shouldn't have.
+
+Stack trace:
+
+ at /sara/sw/canu-1.5/Linux-amd64/bin/lib/canu/Execution.pm line 1097.
+	canu::Execution::submitOrRunParallelJob("hela", "meryl", "correction/0-mercounts", "meryl", 1) called at /sara/sw/canu-1.5/Linux-amd64/bin/lib/canu/Meryl.pm line 536
+	canu::Meryl::merylCheck("hela", "cor") called at /sara/sw/canu-1.5/Linux-amd64/bin/canu line 535
+
+
+
+Canu release v1.5 failed with:
+  Failed to submit batch jobs
+
+cp: cannot stat '/scratch/hela*': No such file or directory

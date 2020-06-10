@@ -1,0 +1,199 @@
+-- Canu 2.0
+--
+-- Detected Java(TM) Runtime Environment '1.8.0_152-release' (from '/home/atgm2001/miniconda3/bin/java') with -d64 support.
+-- Detected gnuplot version '5.2 patchlevel 7   ' (from 'gnuplot') and image format 'png'.
+-- Detected 16 CPUs and 93 gigabytes of memory.
+-- Detected Slurm with 'sinfo' binary in /usr/bin/sinfo.
+-- Detected Slurm with task IDs up to 1000 allowed.
+-- 
+-- Found  21 hosts with  12 cores and  250 GB memory under Slurm control.
+-- Found  29 hosts with  24 cores and  186 GB memory under Slurm control.
+-- Found   1 host  with  48 cores and 2000 GB memory under Slurm control.
+-- Found 282 hosts with  16 cores and   90 GB memory under Slurm control.
+--
+--                         (tag)Threads
+--                (tag)Memory         |
+--        (tag)             |         |  algorithm
+--        -------  ----------  --------  -----------------------------
+-- Grid:  meryl     45.000 GB    8 CPUs  (k-mer counting)
+-- Grid:  hap       16.000 GB   16 CPUs  (read-to-haplotype assignment)
+-- Grid:  cormhap   22.000 GB    4 CPUs  (overlap detection with mhap)
+-- Grid:  obtovl    24.000 GB    8 CPUs  (overlap detection)
+-- Grid:  utgovl    24.000 GB    8 CPUs  (overlap detection)
+-- Grid:  cor       24.000 GB    4 CPUs  (read correction)
+-- Grid:  ovb        4.000 GB    1 CPU   (overlap store bucketizer)
+-- Grid:  ovs       32.000 GB    1 CPU   (overlap store sorting)
+-- Grid:  red       45.000 GB    8 CPUs  (read error detection)
+-- Grid:  oea        8.000 GB    1 CPU   (overlap error adjustment)
+-- Grid:  bat      512.000 GB   32 CPUs  (contig construction with bogart)
+-- Grid:  cns        -.--- GB    8 CPUs  (consensus)
+-- Grid:  gfa       64.000 GB   32 CPUs  (GFA alignment and processing)
+--
+-- Found untrimmed raw Nanopore reads in the input files.
+--
+-- Generating assembly 'hsapienscanu' in '/scratch/canu_project':
+--    - correct raw reads.
+--    - trim corrected reads.
+--    - assemble corrected and trimmed reads.
+--
+-- Parameters:
+--
+--  genomeSize        3000000000
+--
+--  Overlap Generation Limits:
+--    corOvlErrorRate 0.3200 ( 32.00%)
+--    obtOvlErrorRate 0.1200 ( 12.00%)
+--    utgOvlErrorRate 0.1200 ( 12.00%)
+--
+--  Overlap Processing Limits:
+--    corErrorRate    0.5000 ( 50.00%)
+--    obtErrorRate    0.1200 ( 12.00%)
+--    utgErrorRate    0.1200 ( 12.00%)
+--    cnsErrorRate    0.2000 ( 20.00%)
+--
+--
+-- BEGIN CORRECTION
+--
+----------------------------------------
+-- Starting command on Tue Jun  2 11:06:45 2020 with 1798.143 GB free disk space
+
+    cd .
+    ./hsapienscanu.seqStore.sh \
+    > ./hsapienscanu.seqStore.err 2>&1
+
+-- Finished on Tue Jun  2 11:06:59 2020 (14 seconds) with 1797.84 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Tue Jun  2 11:06:59 2020 with 1797.84 GB free disk space
+
+    cd .
+    /scratch/canu-2.0/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./hsapienscanu.seqStore \
+      -raw \
+      -histogram \
+      -lengths \
+    > ./hsapienscanu.seqStore/readlengths-cor.dat \
+    2> ./hsapienscanu.seqStore/readlengths-cor.err 
+    
+
+-- Finished on Tue Jun  2 11:06:59 2020 (fast as lightning) with 1797.839 GB free disk space
+----------------------------------------
+----------------------------------------
+-- Starting command on Tue Jun  2 11:06:59 2020 with 1797.839 GB free disk space
+
+    cd .
+    /scratch/canu-2.0/Linux-amd64/bin/sqStoreDumpMetaData \
+      -S ./hsapienscanu.seqStore \
+      -raw \
+      -histogram \
+    > ./hsapienscanu.seqStore/readlengths-cor.txt \
+    2> ./hsapienscanu.seqStore/readlengths-cor.err 
+    
+
+-- Finished on Tue Jun  2 11:06:59 2020 (furiously fast) with 1797.839 GB free disk space
+----------------------------------------
+--
+-- In sequence store './hsapienscanu.seqStore':
+--   Found 118108 reads.
+--   Found 887383995 bases (0.29 times coverage).
+--    
+--    G=887383995                        sum of  ||               length     num
+--    NG         length     index       lengths  ||                range    seqs
+--    ----- ------------ --------- ------------  ||  ------------------- -------
+--    00010        36072      1897     88762214  ||       1000-2982        42317|---------------------------------------------------------------
+--    00020        26414      4797    177478758  ||       2983-4965        21055|--------------------------------
+--    00030        20489      8631    266229857  ||       4966-6948        13554|---------------------
+--    00040        16268     13507    354966845  ||       6949-8931         9484|---------------
+--    00050        12891     19650    443693539  ||       8932-10914        6840|-----------
+--    00060        10110     27424    532440254  ||      10915-12897        5226|--------
+--    00070         7629     37527    621174285  ||      12898-14880        3959|------
+--    00080         5383     51322    709909643  ||      14881-16863        3048|-----
+--    00090         3258     72287    798647481  ||      16864-18846        2381|----
+--    00100         1000    118107    887383995  ||      18847-20829        1888|---
+--    001.000x              118108    887383995  ||      20830-22812        1512|---
+--                                               ||      22813-24795        1214|--
+--                                               ||      24796-26778         996|--
+--                                               ||      26779-28761         769|--
+--                                               ||      28762-30744         663|-
+--                                               ||      30745-32727         548|-
+--                                               ||      32728-34710         475|-
+--                                               ||      34711-36693         372|-
+--                                               ||      36694-38676         269|-
+--                                               ||      38677-40659         283|-
+--                                               ||      40660-42642         205|-
+--                                               ||      42643-44625         188|-
+--                                               ||      44626-46608         144|-
+--                                               ||      46609-48591         110|-
+--                                               ||      48592-50574         107|-
+--                                               ||      50575-52557          98|-
+--                                               ||      52558-54540          62|-
+--                                               ||      54541-56523          57|-
+--                                               ||      56524-58506          41|-
+--                                               ||      58507-60489          50|-
+--                                               ||      60490-62472          29|-
+--                                               ||      62473-64455          26|-
+--                                               ||      64456-66438          25|-
+--                                               ||      66439-68421          27|-
+--                                               ||      68422-70404          19|-
+--                                               ||      70405-72387          15|-
+--                                               ||      72388-74370          13|-
+--                                               ||      74371-76353           8|-
+--                                               ||      76354-78336           7|-
+--                                               ||      78337-80319           6|-
+--                                               ||      80320-82302           2|-
+--                                               ||      82303-84285           4|-
+--                                               ||      84286-86268           2|-
+--                                               ||      86269-88251           3|-
+--                                               ||      88252-90234           1|-
+--                                               ||      90235-92217           3|-
+--                                               ||      92218-94200           0|
+--                                               ||      94201-96183           1|-
+--                                               ||      96184-98166           1|-
+--                                               ||      98167-100149          1|-
+--    
+-- New report created.
+----------------------------------------
+-- Starting command on Tue Jun  2 11:06:59 2020 with 1797.839 GB free disk space
+
+    cd correction/0-mercounts
+    ./meryl-configure.sh \
+    > ./meryl-configure.err 2>&1
+
+-- Finished on Tue Jun  2 11:07:00 2020 (one second) with 1797.839 GB free disk space
+----------------------------------------
+--  segments   memory batches
+--  -------- -------- -------
+--        01  2.00 GB       1
+--        02  1.19 GB       1
+--        04  0.62 GB       1
+--        06  0.44 GB       1
+--        08  0.31 GB       1
+--
+--  For 118108 reads with 887383995 bases, limit to 8 batches.
+--  Will count kmers using 01 jobs, each using 4 GB and 8 threads.
+--
+-- Report changed.
+-- Finished stage 'merylConfigure', reset canuIteration.
+-- No change in report.
+--
+-- Running jobs.  First attempt out of 2.
+--
+-- 'meryl-count.jobSubmit-01.sh' -> job 5841770 task 1.
+--
+----------------------------------------
+-- Starting command on Tue Jun  2 11:07:00 2020 with 1797.839 GB free disk space
+
+    cd /scratch/canu_project
+    sbatch \
+      --depend=afterany:5841770 \
+      --cpus-per-task=1 \
+      --mem-per-cpu=4g   \
+      -D `pwd` \
+      -J 'canu_hsapienscanu' \
+      -o canu-scripts/canu.01.out  canu-scripts/canu.01.sh
+Submitted batch job 5841771
+
+-- Finished on Tue Jun  2 11:07:00 2020 (lickety-split) with 1797.839 GB free disk space
+----------------------------------------
+cp: cannot create regular file '/home/atgm2001/project/Assembly/canu_project/hsapienscanu.seqStore/blobs.0001': Permission denied
+cp: cannot stat '/scratch/hsapienscanu*': No such file or directory
