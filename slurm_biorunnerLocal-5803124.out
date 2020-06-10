@@ -1,0 +1,787 @@
+-- Canu 2.0
+--
+-- Detected Java(TM) Runtime Environment '1.8.0_152-release' (from '/home/atgm2001/miniconda3/bin/java') with -d64 support.
+-- Detected gnuplot version '5.2 patchlevel 7   ' (from 'gnuplot') and image format 'png'.
+-- Detected 16 CPUs and 93 gigabytes of memory.
+-- Detected Slurm with 'sinfo' binary in /usr/bin/sinfo.
+-- Detected Slurm with task IDs up to 1000 allowed.
+-- 
+-- Found   1 host  with  48 cores and 2000 GB memory under Slurm control.
+-- Found  29 hosts with  24 cores and  186 GB memory under Slurm control.
+-- Found  21 hosts with  12 cores and  250 GB memory under Slurm control.
+-- Found 282 hosts with  16 cores and   90 GB memory under Slurm control.
+--
+--                         (tag)Threads
+--                (tag)Memory         |
+--        (tag)             |         |  algorithm
+--        -------  ----------  --------  -----------------------------
+-- Grid:  meryl     12.000 GB    4 CPUs  (k-mer counting)
+-- Grid:  hap        8.000 GB    4 CPUs  (read-to-haplotype assignment)
+-- Grid:  cormhap    6.000 GB    4 CPUs  (overlap detection with mhap)
+-- Grid:  obtovl     4.000 GB    4 CPUs  (overlap detection)
+-- Grid:  utgovl     4.000 GB    4 CPUs  (overlap detection)
+-- Grid:  cor        8.000 GB    4 CPUs  (read correction)
+-- Grid:  ovb        4.000 GB    1 CPU   (overlap store bucketizer)
+-- Grid:  ovs        8.000 GB    1 CPU   (overlap store sorting)
+-- Grid:  red       16.000 GB    4 CPUs  (read error detection)
+-- Grid:  oea        8.000 GB    1 CPU   (overlap error adjustment)
+-- Grid:  bat       16.000 GB    4 CPUs  (contig construction with bogart)
+-- Grid:  cns        -.--- GB    4 CPUs  (consensus)
+-- Grid:  gfa       16.000 GB    4 CPUs  (GFA alignment and processing)
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+-- WARNING:
+-- WARNING:  Option '-nanopore-raw <files>' is deprecated.
+-- WARNING:  Use option '-nanopore <files>' in the future.
+-- WARNING:
+--
+-- Found untrimmed raw Nanopore reads in the input files.
+
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Required parameter 'genomeSize' not set.
+
+
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'r1/r1.correctedReads*.fastq.gz'.  Did you forget quotes around options with spaces?
+
+
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'r2/r2.correctedReads*.fastq.gz'.  Did you forget quotes around options with spaces?
+
+
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'r3/r3.correctedReads*.fastq.gz'.  Did you forget quotes around options with spaces?
+
+
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'r4/r4.correctedReads*.fastq.gz'.  Did you forget quotes around options with spaces?
+
+
+usage:   canu [-version] [-citation] \
+              [-haplotype | -correct | -trim | -assemble | -trim-assemble] \
+              [-s <assembly-specifications-file>] \
+               -p <assembly-prefix> \
+               -d <assembly-directory> \
+               genomeSize=<number>[g|m|k] \
+              [other-options] \
+              [-haplotype{NAME} illumina.fastq.gz] \
+              [-corrected] \
+              [-trimmed] \
+              [-pacbio |
+               -nanopore |
+               -pacbio-hifi] file1 file2 ...
+
+example: canu -d run1 -p godzilla genomeSize=1g -nanopore-raw reads/*.fasta.gz 
+
+
+  To restrict canu to only a specific stage, use:
+    -haplotype     - generate haplotype-specific reads
+    -correct       - generate corrected reads
+    -trim          - generate trimmed reads
+    -assemble      - generate an assembly
+    -trim-assemble - generate trimmed reads and then assemble them
+
+  The assembly is computed in the -d <assembly-directory>, with output files named
+  using the -p <assembly-prefix>.  This directory is created if needed.  It is not
+  possible to run multiple assemblies in the same directory.
+
+  The genome size should be your best guess of the haploid genome size of what is being
+  assembled.  It is used primarily to estimate coverage in reads, NOT as the desired
+  assembly size.  Fractional values are allowed: '4.7m' equals '4700k' equals '4700000'
+
+  Some common options:
+    useGrid=string
+      - Run under grid control (true), locally (false), or set up for grid control
+        but don't submit any jobs (remote)
+    rawErrorRate=fraction-error
+      - The allowed difference in an overlap between two raw uncorrected reads.  For lower
+        quality reads, use a higher number.  The defaults are 0.300 for PacBio reads and
+        0.500 for Nanopore reads.
+    correctedErrorRate=fraction-error
+      - The allowed difference in an overlap between two corrected reads.  Assemblies of
+        low coverage or data with biological differences will benefit from a slight increase
+        in this.  Defaults are 0.045 for PacBio reads and 0.144 for Nanopore reads.
+    gridOptions=string
+      - Pass string to the command used to submit jobs to the grid.  Can be used to set
+        maximum run time limits.  Should NOT be used to set memory limits; Canu will do
+        that for you.
+    minReadLength=number
+      - Ignore reads shorter than 'number' bases long.  Default: 1000.
+    minOverlapLength=number
+      - Ignore read-to-read overlaps shorter than 'number' bases long.  Default: 500.
+  A full list of options can be printed with '-options'.  All options can be supplied in
+  an optional sepc file with the -s option.
+
+  For TrioCanu, haplotypes are specified with the -haplotype{NAME} option, with any
+  number of haplotype-specific Illumina read files after.  The {NAME} of each haplotype
+  is free text (but only letters and numbers, please).  For example:
+    -haplotypeNANNY nanny/*gz
+    -haplotypeBILLY billy1.fasta.gz billy2.fasta.gz
+
+  Reads can be either FASTA or FASTQ format, uncompressed, or compressed with gz, bz2 or xz.
+
+  Reads are specified by the technology they were generated with, and any processing performed.
+
+  [processing]
+    -corrected
+    -trimmed
+
+  [technology]
+    -pacbio      <files>
+    -nanopore    <files>
+    -pacbio-hifi <files>
+
+Complete documentation at http://canu.readthedocs.org/en/latest/
+
+ERROR:  Invalid command line option 'r5/r5.correctedReads.fastq'.  Did you forget quotes around options with spaces?
+
+cp: cannot stat '/scratch/asm': No such file or directory
