@@ -71,7 +71,7 @@ Minimum overlap                                                                5
 Target coverage for corrected reads                                            40
 ```
 ## QUAST
-QUAST is a tool implementated for the assessment of quality of assembly. The tool provides several types of files, containing information about the quality of the assembled genome. Galaxy is used to run QUAST, having the following settings:
+QUAST is a tool for the assessment of quality of assembly. The tool provides several types of files, containing information about the quality of the assembled genome. Galaxy is used to run QUAST, having the following settings:
 ```
 Input files                                                                    Canu_output_contigs.fasta.gz
 Type of assembly                                                               Genome
@@ -84,3 +84,20 @@ Lower threshold for the relocation size                                       10
 Max allowed scaffold gap length difference                                    1000
 Lower threshold for detecting partially unaligned contigs                     1000
 ```
+## Preparation minimap2
+Contigs were parsed into single fasta files using `singlefastafile.py` and uploaded into galaxy along with the trimmed reads. Reads were put 2 separate fasta formats using FASTA Merge Files and Filter Unique Sequences as tool. The following settings were used:
+```
+Run in batch mode                                                             Merge all FASTA's
+How are sequences judged to be unique                                         Accession and sequence
+Accession Parsing Regex                                                       ^>([^ ]+).*$
+```
+## Minimap2
+Minimap2 align the the contigs with the trimmed reads, which serves as reference genome. Minimap2 is used for more accurate polishing with Racon. The tool on galaxy was implemented with the following setting:
+```
+
+
+
+
+
+
+
